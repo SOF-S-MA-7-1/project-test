@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "./assets/style/css/color-palette.css";
+@import "./assets/style/css/tipography.css";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--ff-fredoka);
+}
+
+* {
+  font-family: var(--ff-fredoka);
+}

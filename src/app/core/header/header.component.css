@@ -1,0 +1,26 @@
+header {
+  background-color: var(--pc-amparo-blue);
+  /* height: 64px; */
+}
+
+nav {
+  background-color: var(--pc-amparo-blue);
+}
+
+img {
+  height: 30px;
+}
+
+a,
+li {
+  color: var(--tce-1);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--pc-hole-in-one);
+  --bs-btn-hover-bg: var(--pc-goldenrod-field);
+}
+
+.btn-outline-light {
+  --bs-btn-hover-color: var(--pc-amparo-blue);
+}

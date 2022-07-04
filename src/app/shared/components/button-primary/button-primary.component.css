@@ -1,0 +1,36 @@
+/*
+button {
+  height: 31px; /* 36 31*/ /*
+  color: var(--tce-1);
+  background-color: var(--pc-hole-in-one);
+  text-align: center;
+} */
+
+/* button:hover {
+  background-color: var(--pc-goldenrod-field);
+} */
+
+/* .btn-primary {
+  --bs-btn-bg: var(--pc-hole-in-one);
+  --bs-btn-hover-bg: var(--pc-goldenrod-field);
+  --bs-btn-border-color: none;
+  --bs-btn-active-border-color: none;
+  --bs-btn-hover-border-color: none;
+  --bs-btn-active-bg: none;
+  --bs-btn-active-border-color: none;
+  --bs-btn-focus-shadow-rgb: none;
+} */
+
+button {
+  color: var(--tce-1);
+  background-color: var(--pc-hole-in-one);
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+button:hover {
+  background-color: var(--pc-goldenrod-field);
+}

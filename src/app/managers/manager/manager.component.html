@@ -1,0 +1,65 @@
+<p>manager works!</p>
+
+<br>
+
+<app-button-primary [buttonName]="'Agregar'" (click)="openAddUser()"></app-button-primary>
+
+<br>
+<br>
+
+<!-- Table -->
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- matColumnDef and element. must be de same variable name as in displayedColumns at .ts -->
+
+  <!-- id Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- identityCard Column -->
+  <ng-container matColumnDef="identityCard">
+    <th mat-header-cell *matHeaderCellDef> Identificación </th>
+    <td mat-cell *matCellDef="let element"> {{element.identityCard}} </td>
+  </ng-container>
+
+  <!-- username Column -->
+  <ng-container matColumnDef="username">
+    <th mat-header-cell *matHeaderCellDef> Username </th>
+    <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+  </ng-container>
+
+  <!-- firstName Column -->
+  <ng-container matColumnDef="firstName">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+  </ng-container>
+
+  <!-- lastName Column -->
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef> Apellido(s) </th>
+    <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+  </ng-container>
+
+  <!-- birthDate Column -->
+  <ng-container matColumnDef="birthDate">
+    <th mat-header-cell *matHeaderCellDef> Fecha de nacimiento </th>
+    <td mat-cell *matCellDef="let element"> {{element.birthDate}} </td>
+  </ng-container>
+
+  <!-- address Column -->
+  <ng-container matColumnDef="address">
+    <th mat-header-cell *matHeaderCellDef> Dirección </th>
+    <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+  </ng-container>
+
+  <!-- email Column -->
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> Email </th>
+    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

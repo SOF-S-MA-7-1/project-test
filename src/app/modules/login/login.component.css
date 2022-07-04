@@ -1,0 +1,15 @@
+/* :host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+} */
+
+mat-card {
+  width: 329px;
+}
+
+mat-form-field {
+  width: 100%;
+}
