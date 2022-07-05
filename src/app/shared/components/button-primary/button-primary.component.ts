@@ -14,4 +14,7 @@ export class ButtonPrimaryComponent implements OnInit {
 
   @Input() buttonName: string = ""; // Receive parameter from parent component
 
+  @Input() buttonDisabled: boolean = false;  // Receive parameter from parent component
+
+
 }

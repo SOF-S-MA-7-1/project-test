@@ -1,1 +1,51 @@
 <p>signup works!</p>
+
+<!-- alert message -->
+<div *ngIf="alert" class="alert alert-danger alert-dismissible" role="alert" data-auto-dismiss>
+  <p>
+    <strong>Usuario o Contraseña incorrectos.</strong>
+    <br>
+  </p>Verifique sus datos nuevamente.
+</div>
+
+<!-- login card -->
+<mat-card>
+  <mat-card-title>
+    <span>Iniciar sesión</span>
+  </mat-card-title>
+  <br>
+
+  <!-- (ngSubmit)="onSubmit()" -->
+  <form [formGroup]="userSignup">
+    <mat-card-content>
+
+      <!-- identityCard -->
+      <mat-form-field>
+        <input matInput placeholder="cédula" formControlName="identityCard">
+      </mat-form-field>
+
+      <!-- username -->
+      <mat-form-field>
+        <input matInput placeholder="username" formControlName="username">
+      </mat-form-field>
+      <br>
+
+      <!-- password -->
+      <mat-form-field>
+        <input matInput placeholder="password" formControlName="password" type="password">
+      </mat-form-field>
+      <br>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <!-- buttons -->
+      <app-button-secondary class="button" [buttonName]="'Cancelar'" class="mx-2" (click)="onCancel()"></app-button-secondary>
+      <app-button-primary [buttonName]="'Continuar'" [buttonDisabled]="!userSignup.valid" (click)="onSubmit()"></app-button-primary>
+      <!--  disabled while form is not valid. user and password must be filled -->
+    </mat-card-actions>
+  </form>
+
+  <mat-card-footer>
+
+  </mat-card-footer>
+</mat-card>

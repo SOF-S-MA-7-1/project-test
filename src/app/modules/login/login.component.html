@@ -13,8 +13,7 @@
   </mat-card-title>
   <br>
 
-  <!-- (ngSubmit)="onSubmit()" -->
-  <form [formGroup]="userLogin">
+  <form [formGroup]="userLogin" (ngSubmit)="onSubmit()">
     <mat-card-content>
       <!-- username -->
       <mat-form-field>
@@ -30,10 +29,10 @@
     </mat-card-content>
 
     <mat-card-actions>
-      <!-- buttons -->
-      <app-button-secondary class="button" [buttonName]="'Cancelar'" class="mx-2" (click)="onCancel()"></app-button-secondary>
-      <button mat-raised-button [disabled]="!userLogin.valid" (click)="onSubmit()">Iniciar</button>
-      <!-- <app-button-primary [buttonName]="'continuar'" [disabled]="!userLogin.valid"></app-button-primary> -->
+      <!-- buttons (click)="onCancel()"-->
+      <app-button-secondary class="button" [buttonName]="'Cancelar'" class="mx-2"></app-button-secondary>
+      <!-- (click)="onSubmit()" -->
+      <app-button-primary [buttonName]="'continuar'" [buttonDisabled]="!userLogin.valid"></app-button-primary>
       <!--  disabled while form is not valid. user and password must be filled -->
     </mat-card-actions>
   </form>

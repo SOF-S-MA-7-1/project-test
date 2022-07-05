@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -13,6 +13,7 @@ import { CustomerInterface } from 'src/app/shared/interfaces.ts/customer-interfa
 export class ManagerComponent implements OnInit {
 
   //#region Variables Declaration
+  @Input() listData: any = []; // Input array
   dataSource: any = []; // variable of type: any. Can allocate any type of data
 
   // Variable name must be same as the one used at .html table (line 11)
@@ -21,6 +22,7 @@ export class ManagerComponent implements OnInit {
     'id',
     'identityCard',
     'username',
+    'password',
     'firstName',
     'lastName',
     'birthDate',
@@ -33,6 +35,7 @@ export class ManagerComponent implements OnInit {
       id: 'TEST',
       identityCard: 'TEST',
       username: 'TEST',
+      password: 'TEST',
       firstName: 'TEST',
       lastName: 'TEST',
       birthDate: 'TEST',
@@ -41,18 +44,23 @@ export class ManagerComponent implements OnInit {
     },
   ];
 
+
   newClient: any;
   nav: any;
   // #endregion
 
   //* Executed first *
+  /**
+   *
+   */
   constructor(private router: Router, private dialog: MatDialog) {
-    this.nav = this.router.getCurrentNavigation();
-    this.newClient = this.nav.extras.state;
+    // intercept data
+    this.nav = this.router.getCurrentNavigation(); // obtain data from de modal, at changing component
+    this.newClient = this.nav.extras.state; // decipher data form ¿?
 
     if (this.newClient != null) {
-      console.log(this.newClient.datosClient.queryParams);
-      this.dataClients.push(this.newClient.datosClient.queryParams);
+      console.log(this.newClient.datosClient.queryParams); // print in console
+      this.dataClients.push(this.newClient.datosClient.queryParams); // new collected data added at end of array
     }
   }
 

@@ -10,6 +10,7 @@ export interface CustomerInterface {
   id: string;
   identityCard: string;
   username: string;
+  password: string;
   firstName: string;
   lastName: string;
   birthDate: string;
