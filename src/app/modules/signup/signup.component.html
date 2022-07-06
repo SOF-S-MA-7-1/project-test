@@ -1,38 +1,73 @@
-<p>signup works!</p>
-
 <!-- alert message -->
 <div *ngIf="alert" class="alert alert-danger alert-dismissible" role="alert" data-auto-dismiss>
   <p>
-    <strong>Usuario o Contraseña incorrectos.</strong>
+    <strong>Faltan campos por llenar.</strong>
     <br>
-  </p>Verifique sus datos nuevamente.
+  </p>
 </div>
 
 <!-- login card -->
 <mat-card>
   <mat-card-title>
-    <span>Iniciar sesión</span>
+    <span> {{data.signupName}} </span>
   </mat-card-title>
   <br>
 
   <!-- (ngSubmit)="onSubmit()" -->
-  <form [formGroup]="userSignup">
+  <form [formGroup]="userSignup" (ngSubmit)="onSubmit()">
     <mat-card-content>
+
+      <!-- id -->
+      <mat-form-field *ngIf="addUser">
+        <input matInput placeholder="ID" [disabled]="true">
+      </mat-form-field>
+      <br>
 
       <!-- identityCard -->
       <mat-form-field>
-        <input matInput placeholder="cédula" formControlName="identityCard">
+        <input matInput placeholder="Cédula" formControlName="identityCard">
       </mat-form-field>
+      <br>
 
       <!-- username -->
       <mat-form-field>
-        <input matInput placeholder="username" formControlName="username">
+        <input matInput placeholder="Nombre de usuario" formControlName="username">
       </mat-form-field>
       <br>
 
       <!-- password -->
       <mat-form-field>
-        <input matInput placeholder="password" formControlName="password" type="password">
+        <input matInput placeholder="Contraseña" formControlName="password" type="password">
+      </mat-form-field>
+      <br>
+
+      <!-- firstName -->
+      <mat-form-field>
+        <input matInput placeholder="Nombre" formControlName="firstName">
+      </mat-form-field>
+      <br>
+
+      <!-- lastName -->
+      <mat-form-field>
+        <input matInput placeholder="Apellido" formControlName="lastName">
+      </mat-form-field>
+      <br>
+
+      <!-- birthDate -->
+      <mat-form-field>
+        <input matInput placeholder="Fecha de nacimiento" formControlName="birthDate">
+      </mat-form-field>
+      <br>
+
+      <!-- address -->
+      <mat-form-field>
+        <input matInput placeholder="Dirección" formControlName="address">
+      </mat-form-field>
+      <br>
+
+      <!-- email -->
+      <mat-form-field>
+        <input matInput placeholder="Correo electrónico" formControlName="email">
       </mat-form-field>
       <br>
     </mat-card-content>
@@ -40,7 +75,7 @@
     <mat-card-actions>
       <!-- buttons -->
       <app-button-secondary class="button" [buttonName]="'Cancelar'" class="mx-2" (click)="onCancel()"></app-button-secondary>
-      <app-button-primary [buttonName]="'Continuar'" [buttonDisabled]="!userSignup.valid" (click)="onSubmit()"></app-button-primary>
+      <app-button-primary [buttonName]="'Continuar'" [buttonDisabled]="!userSignup.valid"></app-button-primary>
       <!--  disabled while form is not valid. user and password must be filled -->
     </mat-card-actions>
   </form>

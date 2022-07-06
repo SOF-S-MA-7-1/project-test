@@ -12,25 +12,40 @@ export class HeaderComponent implements OnInit {
   /**
    * One toolbar/header have all, just shows what needed depending on user roles
    */
-
+  // #region Variables Declaration
   listNavItem: String[] = [
     "Inicio",
     "Catálogo",
     "Noticias",
     "Nosotros"
-  ]
+  ];
+  listOptions: string[] = [
+    "Perfil",
+    "Configuración"
+  ];
+  userName: String = "";
+  isUserRole: boolean = false;
+  // #endregion
 
   constructor(private dialog: MatDialog) { } // to a dialog window, create-> Variable: dialog. Type: MatDialog
 
   ngOnInit(): void {
   }
 
-  openSignUp() {
-    this.dialog.open(SignupComponent);
+  // #region Functions
+  openSignUp(titleForm: string): void {
+    this.dialog.open(SignupComponent, { data: { signupName: titleForm } }); //[signupName]="Random name"
+
   }
 
   openLogIn() {
-    this.dialog.open(LoginComponent); //opens a dialog windows, inside it the login component
+    let dialogRef = this.dialog.open(LoginComponent); //opens a dialog windows, inside it the login component
+    dialogRef.afterClosed().subscribe(result => { // Receive data at close dialog
+      if (result != null) {
+        this.userName = result;
+        this.isUserRole = true;
+      }
+    });
   }
-
+  // #endregion
 }

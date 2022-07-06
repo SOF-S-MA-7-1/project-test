@@ -23,7 +23,7 @@ const MaterialComponents = [
 @NgModule({
   declarations: [
   ],
-  imports: [
+  imports: [ // import material
     CommonModule,
     MaterialComponents
   ],

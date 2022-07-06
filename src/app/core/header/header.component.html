@@ -11,13 +11,23 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item" *ngFor="let item of listNavItem">
-            <a class="nav-link" href="#">{{item}}</a>
+            <a class="nav-link" href="#"> {{item}} </a>
           </li>
         </ul>
 
-        <form>
-          <app-button-secondary [buttonName]="'Registrarse'" (click)="openSignUp()" class="mx-2"></app-button-secondary>
+        <form *ngIf="!isUserRole">
+          <app-button-secondary [buttonName]="'Registrarse'" (click)="openSignUp('Registrarse')" class="mx-2"></app-button-secondary>
           <app-button-primary [buttonName]="'Iniciar sesión'" (click)="openLogIn()"></app-button-primary>
+        </form>
+
+        <form *ngIf="isUserRole">
+          <app-button-primary [buttonName]="userName+''" mat-button [matMenuTriggerFor]="beforeMenu"></app-button-primary>
+          <!-- <button mat-button [matMenuTriggerFor]="beforeMenu">Before</button> -->
+          <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <button mat-menu-item *ngFor="let item of listOptions"> {{item}} </button>
+            <button mat-menu-item> Editar Usuarios </button>
+            <button mat-menu-item> Salir </button>
+          </mat-menu>
         </form>
       </div>
 

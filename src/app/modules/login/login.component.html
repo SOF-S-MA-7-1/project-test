@@ -30,9 +30,9 @@
 
     <mat-card-actions>
       <!-- buttons (click)="onCancel()"-->
-      <app-button-secondary class="button" [buttonName]="'Cancelar'" class="mx-2"></app-button-secondary>
+      <app-button-secondary [buttonName]="'Cancelar'" (click)="onCancel()" class="button mx-2"></app-button-secondary>
       <!-- (click)="onSubmit()" -->
-      <app-button-primary [buttonName]="'continuar'" [buttonDisabled]="!userLogin.valid"></app-button-primary>
+      <app-button-primary [buttonName]="'Continuar'" [buttonDisabled]="!userLogin.valid"></app-button-primary>
       <!--  disabled while form is not valid. user and password must be filled -->
     </mat-card-actions>
   </form>

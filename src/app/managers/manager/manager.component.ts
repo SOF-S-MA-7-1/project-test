@@ -12,12 +12,10 @@ import { CustomerInterface } from 'src/app/shared/interfaces.ts/customer-interfa
 })
 export class ManagerComponent implements OnInit {
 
-  //#region Variables Declaration
+  // #region Variables Declaration
   @Input() listData: any = []; // Input array
   dataSource: any = []; // variable of type: any. Can allocate any type of data
-
-  // Variable name must be same as the one used at .html table (line 11)
-  displayedColumns: string[] = [
+  displayedColumns: string[] = [ // Variable name must be same as the one used at .html table (line 11)
     // variables have to be the same as the interface variables
     'id',
     'identityCard',
@@ -29,7 +27,6 @@ export class ManagerComponent implements OnInit {
     'address',
     'email'
   ];
-
   dataClients: CustomerInterface[] = [
     {
       id: 'TEST',
@@ -43,16 +40,10 @@ export class ManagerComponent implements OnInit {
       email: 'TEST'
     },
   ];
-
-
   newClient: any;
   nav: any;
   // #endregion
 
-  //* Executed first *
-  /**
-   *
-   */
   constructor(private router: Router, private dialog: MatDialog) {
     // intercept data
     this.nav = this.router.getCurrentNavigation(); // obtain data from de modal, at changing component
@@ -65,19 +56,16 @@ export class ManagerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    /**
-     *
-     */
     this.dataSource = new MatTableDataSource<CustomerInterface>(this.dataClients as CustomerInterface[]);
     console.log(this.dataClients);
   }
 
   // #region Functions
-  openAddUser() {
+  openAddUser(titleForm: string) {
     /**
      * Calls Signup component in dialog window
      */
-    this.dialog.open(SignupComponent);
+    this.dialog.open(SignupComponent, { data: { signupName: titleForm, addUser: 'true' } });
   }
   // #endregion
 

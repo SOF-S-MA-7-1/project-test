@@ -34,6 +34,7 @@ import { HomeComponent } from './modules/home/home.component';
     BrowserAnimationsModule,
     MaterialModule // Import from material module
   ],
+  entryComponents: [LoginComponent], //
   providers: [],
   bootstrap: [AppComponent]
 })
