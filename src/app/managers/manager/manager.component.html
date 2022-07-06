@@ -7,6 +7,7 @@
 
   <br>
   <br>
+
   <!--  tabindex="0" -->
   <div class="example-container">
     <!-- Table -->
@@ -18,12 +19,6 @@
       <ng-container matColumnDef="id" sticky>
         <th mat-header-cell *matHeaderCellDef> ID </th>
         <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-      </ng-container>
-
-      <!-- identityCard Column -->
-      <ng-container matColumnDef="identityCard">
-        <th mat-header-cell *matHeaderCellDef> Identificación </th>
-        <td mat-cell *matCellDef="let element"> {{element.identityCard}} </td>
       </ng-container>
 
       <!-- username Column -->
@@ -50,10 +45,10 @@
         <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
       </ng-container>
 
-      <!-- birthDate Column -->
-      <ng-container matColumnDef="birthDate">
-        <th mat-header-cell *matHeaderCellDef> Fecha de nacimiento </th>
-        <td mat-cell *matCellDef="let element"> {{element.birthDate}} </td>
+      <!-- age Column -->
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef> Edad </th>
+        <td mat-cell *matCellDef="let element"> {{element.age}} </td>
       </ng-container>
 
       <!-- address Column -->

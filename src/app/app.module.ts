@@ -17,6 +17,7 @@ import { HomeComponent } from './modules/home/home.component';
 
 @NgModule({
   declarations: [
+    // all components created by command line
     AppComponent,
     HeaderComponent,
     LoginComponent,
@@ -32,9 +33,9 @@ import { HomeComponent } from './modules/home/home.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule // Import from material module
+    MaterialModule // Imported from material.module
   ],
-  entryComponents: [LoginComponent], //
+  entryComponents: [LoginComponent], //?
   providers: [],
   bootstrap: [AppComponent]
 })

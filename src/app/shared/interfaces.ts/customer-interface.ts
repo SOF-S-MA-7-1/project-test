@@ -8,12 +8,11 @@ export interface CustomerInterface {
    * Variables can de defined as required or optional
    * */
   id: string;
-  identityCard: string;
   username: string;
   password: string;
   firstName: string;
   lastName: string;
-  birthDate: string;
+  age: string;
   address: string;
   email: string;
   // optional?: string; // Optional field, use ? before :

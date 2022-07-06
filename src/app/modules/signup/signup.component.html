@@ -1,11 +1,3 @@
-<!-- alert message -->
-<div *ngIf="alert" class="alert alert-danger alert-dismissible" role="alert" data-auto-dismiss>
-  <p>
-    <strong>Faltan campos por llenar.</strong>
-    <br>
-  </p>
-</div>
-
 <!-- login card -->
 <mat-card>
   <mat-card-title>
@@ -14,18 +6,12 @@
   <br>
 
   <!-- (ngSubmit)="onSubmit()" -->
-  <form [formGroup]="userSignup" (ngSubmit)="onSubmit()">
+  <form [formGroup]="userSignup">
     <mat-card-content>
 
-      <!-- id -->
-      <mat-form-field *ngIf="addUser">
-        <input matInput placeholder="ID" [disabled]="true">
-      </mat-form-field>
-      <br>
-
-      <!-- identityCard -->
+      <!-- id [disabled]="!editUser" -->
       <mat-form-field>
-        <input matInput placeholder="Cédula" formControlName="identityCard">
+        <input matInput placeholder="Cédula" formControlName="id">
       </mat-form-field>
       <br>
 
@@ -53,9 +39,9 @@
       </mat-form-field>
       <br>
 
-      <!-- birthDate -->
+      <!-- age -->
       <mat-form-field>
-        <input matInput placeholder="Fecha de nacimiento" formControlName="birthDate">
+        <input matInput placeholder="Edad" formControlName="age">
       </mat-form-field>
       <br>
 
@@ -75,7 +61,7 @@
     <mat-card-actions>
       <!-- buttons -->
       <app-button-secondary class="button" [buttonName]="'Cancelar'" class="mx-2" (click)="onCancel()"></app-button-secondary>
-      <app-button-primary [buttonName]="'Continuar'" [buttonDisabled]="!userSignup.valid"></app-button-primary>
+      <app-button-primary [buttonName]="'Agregar'" [buttonDisabled]="!userSignup.valid" (click)="onSubmit()"></app-button-primary>
       <!--  disabled while form is not valid. user and password must be filled -->
     </mat-card-actions>
   </form>

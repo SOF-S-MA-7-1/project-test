@@ -25,7 +25,7 @@
           <!-- <button mat-button [matMenuTriggerFor]="beforeMenu">Before</button> -->
           <mat-menu #beforeMenu="matMenu" xPosition="before">
             <button mat-menu-item *ngFor="let item of listOptions"> {{item}} </button>
-            <button mat-menu-item> Editar Usuarios </button>
+            <button mat-menu-item (click)="openEditUser()"> Editar Usuarios </button>
             <button mat-menu-item> Salir </button>
           </mat-menu>
         </form>
