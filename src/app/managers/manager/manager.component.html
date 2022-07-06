@@ -3,9 +3,17 @@
 
   <br>
 
-  <app-button-primary [buttonName]="'Agregar'" (click)="openAddUser('Agregar Usuario')"></app-button-primary>
+  <div class="d-flex justify-content-between align-items-center">
 
-  <br>
+    <mat-form-field appearance="standard">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+
+    <app-button-primary [buttonName]="'Agregar'" (click)="openAddUser('Agregar Usuario')"></app-button-primary>
+
+  </div>
+
   <br>
 
   <!--  tabindex="0" -->

@@ -38,7 +38,7 @@ export class ManagerComponent implements OnInit {
       email: 'TEST 1',
     },
     {
-      id: 'TEST 2',
+      id: '0123456789',
       username: 'TEST 2',
       password: 'TEST 2',
       firstName: 'TEST 2',
@@ -81,6 +81,11 @@ export class ManagerComponent implements OnInit {
   }
 
   // #region Functions
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
   openAddUser(titleForm: string) {
     /**
      * Calls Signup component in dialog window as formAddUser

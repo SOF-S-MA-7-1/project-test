@@ -63,16 +63,11 @@ export class SignupComponent implements OnInit {
       skipLocationChange: false,
       fragment: 'top',
     };
-    console.log(objectToSend);
     this.dialogRef.close(); // close modal window
     this.redirectTo('/manager', objectToSend); // Calls function redirectTo()
   }
 
   redirectTo(uri: string, objectToSend: NavigationExtras) {
-    console.log('...Entra al redirectTo...');
-    /**
-     *
-     */
     this.router
       .navigateByUrl('/', { skipLocationChange: true }) // 1°. go to original direction
       .then(
